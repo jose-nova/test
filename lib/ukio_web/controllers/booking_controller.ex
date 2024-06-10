@@ -8,19 +8,11 @@ defmodule UkioWeb.BookingController do
   action_fallback UkioWeb.FallbackController
 
   def create(conn, %{"booking" => booking_params}) do
-    result = BookingCreator.create(booking_params)
-
-    with {:ok, %Booking{} = booking} <- result do
+    with {:ok, %Booking{} = booking} <- BookingCreator.create(booking_params) do
       conn
       |> put_status(:created)
       |> render(:show, booking: booking)
     end
-
-    # with {:error, %Booking{} = booking} <- result do
-    #   conn
-    #   |> put_status(:unauthorized)
-    #   |> render("unauthorized")
-    # end
   end
 
   def show(conn, %{"id" => id}) do
