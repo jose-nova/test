@@ -28,5 +28,16 @@ defmodule Ukio.Apartments.Booking do
       :deposit,
       :utilities
     ])
+    |> validate_checkin_order()
+  end
+
+  defp validate_checkin_order(changeset) do
+    check_in = get_field(changeset, :check_in)
+    check_out = get_field(changeset, :check_out)
+
+    if Date.compare(check_in, check_out) != :lt do
+      add_error(changeset, check_in, "must be before check_out")
+    end
+    changeset
   end
 end
