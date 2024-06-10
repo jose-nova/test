@@ -5,8 +5,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/whatever
     environment:
       - POSTGRES_USER=ukio_code_test
       - POSTGRES_PASSWORD=ukio_code_test
       - POSTGRES_DB=ukio_code_test
+
