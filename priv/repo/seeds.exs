@@ -14,6 +14,7 @@ Ukio.Repo.insert!(%Ukio.Apartments.Apartment{
   name: "CAPITAN",
   monthly_price: 250_000,
   address: "Carrer de Balmes 76",
+  city: "Barcelona",
   square_meters: 120
 })
 
@@ -22,5 +23,15 @@ Ukio.Repo.insert!(%Ukio.Apartments.Apartment{
   name: "CAPITAN",
   monthly_price: 195_000,
   address: "Carrer de Granados 45",
+  city: "Barcelona",
   square_meters: 89
+})
+
+Ukio.Repo.insert!(%Ukio.Apartments.Apartment{
+  zip_code: "98765",
+  name: "ESCAPE",
+  monthly_price: 9_495_000,
+  address: "Martian Ave. 89",
+  city: "Mars",
+  square_meters: 39
 })

@@ -21,6 +21,7 @@ defmodule UkioWeb.ApartmentJSON do
       name: apartment.name,
       address: apartment.address,
       zip_code: apartment.zip_code,
+      city: apartment.city,
       monthly_price: apartment.monthly_price,
       square_meters: apartment.square_meters
     }
