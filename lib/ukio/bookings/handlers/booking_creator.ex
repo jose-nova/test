@@ -1,4 +1,6 @@
 defmodule Ukio.Bookings.Handlers.BookingCreator do
+  alias Ukio.Bookings.Handlers.BookingDeposit
+  alias Ukio.Bookings.Handlers.BookingUtilities
   alias Ukio.Apartments
 
   def create(
@@ -17,8 +19,8 @@ defmodule Ukio.Bookings.Handlers.BookingCreator do
       check_in: check_in,
       check_out: check_out,
       monthly_rent: apartment.monthly_price,
-      utilities: 20_000,
-      deposit: 100_000
+      utilities: BookingUtilities.calculate(apartment),
+      deposit: BookingDeposit.calculate(apartment)
     }
   end
 end
