@@ -34,12 +34,16 @@ defmodule Ukio.Apartments.Booking do
   end
 
   defp validate_dates(changeset) do
+    if changeset.valid? do
     check_in = get_field(changeset, :check_in)
     check_out = get_field(changeset, :check_out)
 
     case Date.compare(check_in, check_out) != :lt do
       true -> add_error(changeset, :check_in, "must be before check_out")
       false -> changeset
+    end
+    else
+      changeset
     end
   end
 

@@ -8,7 +8,6 @@ defmodule UkioWeb.FallbackController do
 
   # This clause handles errors returned by Ecto's insert/update/delete.
   def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
-    IO.inspect(changeset)
     case Enum.find_value(changeset.errors, fn {field, message} ->
       if field == :apartment_unavailable do
         :apartment_unavailable

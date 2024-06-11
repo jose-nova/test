@@ -6,7 +6,7 @@ defmodule UkioWeb.BookingControllerTest do
   @create_attrs %{
     apartment_id: 42,
     check_in: ~D[2023-03-26],
-    check_out: ~D[2023-03-26]
+    check_out: ~D[2023-03-27]
   }
 
   @invalid_attrs %{
@@ -34,7 +34,7 @@ defmodule UkioWeb.BookingControllerTest do
       assert %{
                "id" => ^id,
                "check_in" => "2023-03-26",
-               "check_out" => "2023-03-26",
+               "check_out" => "2023-03-27",
                "deposit" => 100_000,
                "monthly_rent" => 250_000,
                "utilities" => 20000
